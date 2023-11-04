@@ -488,6 +488,7 @@ class ComposerStaticInite8fd1712de826aad53f5add106203fa9
         'App\\Searchs\\SelectNameDetails' => __DIR__ . '/../..' . '/app/Searchs/SelectNameDetails.php',
         'App\\Searchs\\SelectNames' => __DIR__ . '/../..' . '/app/Searchs/SelectNames.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'AuthorsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AuthorsTableSeeder.php',
         'Barryvdh\\Debugbar\\Console\\ClearCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
         'Barryvdh\\Debugbar\\Controllers\\AssetController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',
         'Barryvdh\\Debugbar\\Controllers\\BaseController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/BaseController.php',
