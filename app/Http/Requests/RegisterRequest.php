@@ -30,10 +30,10 @@ class RegisterRequest extends FormRequest
           'under_name_kana' => 'required|string|/\A[ァ-ヴー]+\z/u|max:30',
           'mail_address' => 'required|mail|unique:users,mail_address|max:100',
           'sex' => 'required|regex:/^[男|女]+$/u',
-          'old_year' => 'required',
-          'old_month' => 'required|between:1,12',
-          'old_day' => 'required|between:1,31',
-          'role' => 'required',
+          'old_year' => 'required|date|after_or_equal:2000-01-01',
+          'old_month' => 'required|date|after_or_equal:2000-01-01|between:1,12',
+          'old_day' => 'required|date|after_or_equal:2000-01-01|between:1,31',
+          'role' => 'required|in:1,2,3,4',
           'password' => 'required|min:8|max:30|password_confirmation',
         ];
     }
