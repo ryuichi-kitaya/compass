@@ -15,8 +15,8 @@ class Subjects extends Model
         'subject'
     ];
 
-    public function users(): BelongsToMany
+    public function users()
     {
-        return $this->belongsToMany(User::class,);
+        return $this->belongsToMany(User::class, 'subject_users', 'subject_id', 'user_id')->withPivot('id');
     }
 }
