@@ -6,12 +6,6 @@
     <p class="w-75 m-auto">投稿一覧</p>
     @foreach($posts as $post)
     <div class="post_area border w-75 m-auto p-3">
-      <div class="post_edit_btn">
-        <a class="js-modal-open" href="/bulletin_board/edit" post="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
-      </div>
-      <div class="post_delete_btn">
-        <a class="delete-btn" href="/bulletin_board/delete/{id}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><span></span>削除</a>
-      </div>
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
       <div class="post_bottom_area d-flex">
