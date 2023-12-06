@@ -59,6 +59,7 @@ class PostsController extends Controller
     }
 
     public function postEdit(PostFormRequest $request){
+        $user_id = Auth::id();
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
@@ -67,6 +68,7 @@ class PostsController extends Controller
     }
 
     public function postDelete($id){
+        $user_id = Auth::id();
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
