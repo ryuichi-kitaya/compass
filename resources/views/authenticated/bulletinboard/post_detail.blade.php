@@ -7,10 +7,12 @@
         <div class="detail_inner_head">
           <div>
           </div>
+          @if(Auth::id() === $post->user->id)
           <div>
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
             <a href="{{ route('post.delete', ['id' => $post->id]) }} " onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
           </div>
+          @endif
         </div>
 
         <div class="contributor d-flex">
@@ -38,6 +40,12 @@
           @endforeach
         </div>
       </div>
+      @if($errors->first('post_title'))
+        <span class="error_message">{{ $errors->first('post_title') }}</span>
+      @endif
+      @if($errors->first('post_body'))
+        <span class="error_message">{{ $errors->first('post_body') }}</span>
+      @endif
     </div>
   </div>
   <div class="w-50 p-3">
