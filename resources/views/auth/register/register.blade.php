@@ -161,8 +161,14 @@
             <option value="31">31</option>
           </select>
           <label style="font-size:13px">日</label>
-          @if($errors->first('password'))
-          <span class="error_message">{{ $errors->first('password') }}</span>
+          @if($errors->first('old_year'))
+          <span class="error_message">{{ $errors->first('old_year') }}</span>
+          @endif
+          @if($errors->first('old_month'))
+          <span class="error_message">{{ $errors->first('old_month') }}</span>
+          @endif
+          @if($errors->first('old_day'))
+          <span class="error_message">{{ $errors->first('old_day') }}</span>
           @endif
         </div>
         <div class="mt-3">
