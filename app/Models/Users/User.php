@@ -58,6 +58,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Posts\Post');
     }
 
+    public function postComments(){
+        return $this->hasMany('App\Models\Posts\PostComment');
+    }
+
     public function calendars(){
         return $this->belongsToMany('App\Models\Calendars\Calendar', 'calendar_users', 'user_id', 'calendar_id')->withPivot('user_id', 'id');
     }
@@ -71,6 +75,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Subjects::class, 'subject_users', 'user_id' ,'subject_id')->withPivot('id');
     }
 
+    //Likeモデルとの1対多のリレーション
     public function likes()
     {
         return $this->hasMany('App\Models\Posts\Like');

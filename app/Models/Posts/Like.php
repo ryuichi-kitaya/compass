@@ -13,11 +13,13 @@ class Like extends Model
         'like_post_id'
     ];
 
+    //クラスの完全修復名を文字列で取得
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    //クラスの完全修復名を文字列で取得
     public function post()
     {
         return $this->belongsTo(Post::class);
