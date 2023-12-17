@@ -25,8 +25,8 @@ class RegisterRequest extends FormRequest
         return [
           'over_name' => 'required|string|max:10',
           'under_name' => 'required|string|max:10',
-          'over_name_kana' => 'required|string|/[ァ-ヴー]+/u|max:30',
-          'under_name_kana' => 'required|string|/[ァ-ヴー]+/u|max:30',
+          'over_name_kana' => 'required|string|regex:/[ァ-ヴー]+/u|max:30',
+          'under_name_kana' => 'required|string|regex:/[ァ-ヴー]+/u|max:30',
           'mail_address' => 'required|mail|unique:users,mail_address|max:100',
           'sex' => 'required|regex:/^[男|女]+$/u',
           'old_year' => 'required|date|before:today|after_or_equal:2000-01-01',

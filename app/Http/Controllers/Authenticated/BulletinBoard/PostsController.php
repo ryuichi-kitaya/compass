@@ -11,7 +11,6 @@ use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
-use App\Http\Requests\BulletinBoard\EditPostRequest;
 use Auth;
 
 class PostsController extends Controller
