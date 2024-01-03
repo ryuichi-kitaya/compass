@@ -43,17 +43,11 @@
         <span>権限 : </span><span>生徒</span>
         @endif
       </div>
+      @foreach($subject_lists as $subject_list)
       <div>
-        @if($user->role == 4)
-        @if($user->subject == 1)
-        <span>選択科目 :</span><span>国語</span>
-        @elseif($user->subject == 2)
-        <span>選択科目 :</span><span>数学</span>
-        @else
-        <span>選択科目 :</span><span>英語</span>
-        @endif
-        @endif
+        <span>選択科目 :</span><span>{{ $subject_lists->Subjects()->subjects }}</span>
       </div>
+      @endforeach
     </div>
     @endforeach
   </div>
