@@ -43,11 +43,13 @@
         <span>権限 : </span><span>生徒</span>
         @endif
       </div>
-      @foreach($subject_lists as $subject_list)
+      @if($user->role == 4)
+      @foreach($subjects as $subject)
       <div>
-        <span>選択科目 :</span><span>{{ $subject_lists->Subjects()->subjects }}</span>
+        <span>選択科目 :</span><span>{{ $subject->subject }}</span>
       </div>
       @endforeach
+      @endif
     </div>
     @endforeach
   </div>
