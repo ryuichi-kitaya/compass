@@ -21,13 +21,19 @@ class RegisterRequest extends FormRequest
      * @return array
      */
     
-    protected function passedValidation()
+    public function getValidatorInstance()
     {
-    $date = Date::createMidnightDate($this->input('old_year'), $this->input('old_month'), $this->input('old_day'));
-
-    $this->merge([
-        'date' => Date::parse($this->input('date')),
-    ]);
+        $date = [
+            $this->input('old_year'),
+            $this->input('old_month'),
+            $this->input('old_day')
+        ];
+        $date_validate = implode('-', $date);
+        //↑文字列を連結させるための記述。＄dateをハイフンでつなげる
+        $this->merge(['date' => $date_validate,]);
+        //連結の時に使った$date_validate変数をdateとして扱う。
+        return parent::getValidatorInstance();
+        //このメソッドを実行します。先に合体を走らせることで後のバリデーションが生きる
     }
 
     public function rules()
@@ -53,14 +59,18 @@ class RegisterRequest extends FormRequest
             'under_name.max' =>'名は10文字以内で入力してください。',
             'over_name_kana.required' =>'姓(カナ)は入力必須です。',
             'over_name_kana.max' =>'姓(カナ)は30文字以内で入力してください。',
+            'over_name_kana.regex' =>'カタカナで入力してください。',
             'under_name_kana.required' =>'名(カナ)は入力必須です。',
             'under_name_kana.max' =>'名(カナ)は30文字以内で入力してください。',
+            'under_name_kana.regex' =>'カタカナで入力してください。',
             'mail_address.required' =>'メールアドレスは入力必須です。',
+            'mail_address.email' =>'メール形式で入力してください。',
             'mail_address.max' =>'メールアドレスは100文字以内で入力してください。',
             'mail_address.unique' =>'既に登録済みのメールアドレスは使えません。',
             'sex.required' =>'性別は入力必須です。',
-            'sex.regex' =>'性別は男または女で登録してください。',
-            'date.required' =>'年は入力必須です。',
+            'sex.regex' =>'性別は男またはその他で登録してください。',
+            'date.required' =>'生年月日は入力必須です。',
+            'date.date' =>'正しい日付で入力してください。',
             'date.after_or_equal' =>'2000年1月1日以降で登録してください。',
             'date.after_or_before' =>'未来日の登録はできません。',
             'role.required' =>'役職は入力必須です。',
