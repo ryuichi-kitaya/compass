@@ -20,6 +20,16 @@ class RegisterRequest extends FormRequest
      *
      * @return array
      */
+    
+    protected function passedValidation()
+    {
+    $date = Date::createMidnightDate($this->input('old_year'), $this->input('old_month'), $this->input('old_day'));
+
+    $this->merge([
+        'date' => Date::parse($this->input('date')),
+    ]);
+    }
+
     public function rules()
     {
         return [
@@ -27,13 +37,11 @@ class RegisterRequest extends FormRequest
           'under_name' => 'required|string|max:10',
           'over_name_kana' => 'required|string|regex:/[ァ-ヴー]+/u|max:30',
           'under_name_kana' => 'required|string|regex:/[ァ-ヴー]+/u|max:30',
-          'mail_address' => 'required|mail|unique:users,mail_address|max:100',
-          'sex' => 'required|regex:/^[男|女]+$/u',
-          'old_year' => 'required|date|before:today|after_or_equal:2000-01-01',
-          'old_month' => 'required|date|before:today|after_or_equal:2000-01-01|between:1,12',
-          'old_day' => 'required|date|before:today|after_or_equal:2000-01-01|between:1,31',
+          'mail_address' => 'required|email|unique:users,mail_address|max:100',
+          'sex' => 'required|in:1,2,3',
+          'date' => 'required|date|before:today|after_or_equal:2000-01-01',
           'role' => 'required|in:1,2,3,4',
-          'password' => 'required|min:8|max:30|password_confirmation',
+          'password' => 'required|min:8|max:30|confirmed',
         ];
     }
 
