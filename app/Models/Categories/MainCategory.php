@@ -13,7 +13,7 @@ class MainCategory extends Model
     ];
 
     public function subCategories(){
-        return $this->hasMany('App\Models\Categories\MainCategory');
+        return $this->hasMany('App\Models\Categories\SubCategory');
     }
 
 }
