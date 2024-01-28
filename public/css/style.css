@@ -126,6 +126,8 @@ li{
   color:red;
 }
 
+
+
 /* 掲示板 詳細画面 */
 .contributor{
   font-size:12px;
@@ -232,4 +234,47 @@ li{
 }
 .subject_inner{
   display:none;
+}
+
+.up_post{
+  background-color:#03AAD2;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.up_post a{
+  color: #fff;
+}
+
+.keyword_search{
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.good_btn{
+  width: 50%;
+  font-size:12px;
+  border-radius:5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border:none;
+  background:palevioletred;
+  color:#fff
+}
+
+.my_post_btn{
+  width: 45%;
+  font-size:12px;
+  border-radius:5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border:none;
+  background:orange;
+  color:#FFF;
 }
