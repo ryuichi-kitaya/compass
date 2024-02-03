@@ -29,7 +29,7 @@ class Post extends Model
         return $this->hasMany('App\Models\Posts\Like');
     }
 
-    public function subCategories(){
+    public function sub_Category(){
         // リレーションの定義
         return $this->hasMany('App\Models\Categories\SubCategory');
     }

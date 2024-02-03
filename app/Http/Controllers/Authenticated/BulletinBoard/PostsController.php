@@ -30,7 +30,7 @@ class PostsController extends Controller
         }else if($request->category_word){
             $sub_category = $request->category_word;
             $posts = Post::with(['sub_category' => function ($query){
-                $query->where('sub_category', 'like', '%'.$request->category_word.'%');
+                $query->where('sub_category', 'like', '%'.$sub_category.'%');
             }])->get();
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
