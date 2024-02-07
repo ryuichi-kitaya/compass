@@ -10,6 +10,7 @@ use App\Models\Posts\Post;
 use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
+use App\Models\Categories\PostSubCategories;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Requests\MaincategoryRequest;
@@ -29,9 +30,9 @@ class PostsController extends Controller
             ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
         }else if($request->category_word){
             $sub_category = $request->category_word;
-            $posts = Post::with(['sub_category' => function ($query){
+            $posts = Post::whereHas('sub_category',function ($query) use ($sub_category) {
                 $query->where('sub_category', 'like', '%'.$sub_category.'%');
-            }])->get();
+            })->get();
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')
@@ -58,6 +59,10 @@ class PostsController extends Controller
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
             'post' => $request->post_body
+        ]);
+        $category = PostSubCategories::create([
+            'post_id' => $post->id,
+            'sub_category_id' => $request->post_category_id,
         ]);
         return redirect()->route('post.show');
     }

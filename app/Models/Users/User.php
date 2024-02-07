@@ -70,8 +70,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Calendars\ReserveSettings', 'reserve_setting_users', 'user_id', 'reserve_setting_id')->withPivot('id');
     }
 
-    public function subjects()
-    {
+    public function subjects(){
         return $this->belongsToMany(Subjects::class, 'subject_users', 'user_id' ,'subject_id')->withPivot('id');
     }
 
