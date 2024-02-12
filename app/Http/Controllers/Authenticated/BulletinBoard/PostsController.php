@@ -27,7 +27,9 @@ class PostsController extends Controller
         if(!empty($request->keyword)){
             $posts = Post::with('user', 'postComments')
             ->where('post_title', 'like', '%'.$request->keyword.'%')
-            ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
+            ->orWhere('post', 'like', '%'.$request->keyword.'%')
+            ->orWhereHas('sub_category',function ($query) use ($request) {
+                $query->where('sub_category', '=', $request->keyword);})->get();
         }else if($request->category_word){
             $sub_category = $request->category_word;
             $posts = Post::whereHas('sub_category',function ($query) use ($sub_category) {
