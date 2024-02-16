@@ -35,7 +35,7 @@ li{
 
 /* スクール予約関連 */
 .day-blank{
-  background:#D3D3D3;
+  background:gray;
 }
 .day-sat{
   color:#0000FF;
@@ -53,6 +53,7 @@ li{
   color:#494949;
   font-size:12px;
 }
+
 .adjust-table{
   width:70% !important;
 }
