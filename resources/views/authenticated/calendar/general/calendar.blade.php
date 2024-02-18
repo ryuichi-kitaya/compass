@@ -15,4 +15,19 @@
     </div>
   </div>
 </div>
+<div class="modal js-modal">
+  <div class="modal__bg js-modal-close"></div>
+  <div class="modal__content">
+    <div class="calendar-delete-view">
+      <p>予約日：<span class="date"></span></p>
+      <p>時間：<span class="part"></span></p>
+      <p>上記の予約をキャンセルしてもよろしいですか？</p>
+    </div>
+    <P><a class="js-modal-close" href="">閉じる</a></P>
+    <form action="/delete/calendar" method="post">
+      <input type="submit" name="id" class="modal_id" value="キャンセル" >
+       {{ csrf_field() }}
+    </form>
+  </div>
+</div>
 @endsection

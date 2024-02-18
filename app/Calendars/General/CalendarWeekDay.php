@@ -80,7 +80,7 @@ class CalendarWeekDay{
 
    function authReserveDay(){
      return Auth::user()->reserveSettings->pluck('setting_reserve')->toArray();
-   }
+   }//私が予約している日を配列で取得してね！
 
    function authReserveDate($reserveDate){
      return Auth::user()->reserveSettings->where('setting_reserve', $reserveDate);
