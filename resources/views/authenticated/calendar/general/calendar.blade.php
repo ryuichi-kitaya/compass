@@ -26,6 +26,8 @@
     <P><a class="js-modal-close" href="">閉じる</a></P>
     <form action="/delete/calendar" method="post">
       <input type="submit" name="id" class="modal_id" value="キャンセル" >
+      <input type="hidden" name="getData" class="delete_date"  value="">
+      <input type="hidden" name="getPart" class="delete_part"  value="">
        {{ csrf_field() }}
     </form>
   </div>

@@ -12,6 +12,17 @@ $(function(){
   $('.date').text(reserve);
     // 取得した投稿のidをモーダルの中身へ渡す
   $('.part').text(reserve_id);
+  if(reserve_id == "リモ1部"){
+    reserve_id = 1 ;
+  }else if(reserve_id == "リモ2部"){
+    reserve_id = 2 ;
+  }else if(reserve_id == "リモ3部"){
+    reserve_id = 3 ;
+  }
+
+  $('.delete_date').val(reserve);
+    // 取得した投稿のidをモーダルの中身へ渡す
+  $('.delete_part').val(reserve_id);
   return false;
   });
 
