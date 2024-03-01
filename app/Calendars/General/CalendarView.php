@@ -49,7 +49,7 @@ class CalendarView{
         //ここまででカレンダーの記述は完了。
 
         if(in_array($day->everyDay(), $day->authReserveDay())){//毎日かつ自分が予約している日
-          $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;//自分がその日何部で予約しているのか
+          $reservePart = $day->authReserveDate($day->everyDay())->  first()->setting_part;//自分がその日何部で予約しているのか
           if($reservePart == 1){
             $reservePart = "リモ1部";
           }else if($reservePart == 2){
