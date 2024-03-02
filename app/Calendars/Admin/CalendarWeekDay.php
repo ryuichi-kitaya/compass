@@ -1,4 +1,4 @@
-s<?php
+<?php
 namespace App\Calendars\Admin;
 
 use Carbon\Carbon;
@@ -31,13 +31,13 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部<span class="part_count1>{{ $one_part->reserveSettings()->reserve_setting_id->count() }}</span>"</p>';
+      $html[] = '<p class="day_part m-0 pt-1">1部<span>'. $one_part->users()->count() .'</span></p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部<span class="part_count2>{{ $two_part->reserveSettings()->reserve_setting_id->count() }}</span></p>';
+      $html[] = '<p class="day_part m-0 pt-1">2部<span>'. $two_part->users()->count() .'</span></p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部<span class="part_count3>{{ $three_part->reserveSettings()->reserve_setting_id->count() }}</span></p>';
+      $html[] = '<p class="day_part m-0 pt-1">3部<span>'.$three_part->users()->count() .'</span></p>';
     }
     $html[] = '</div>';
 
