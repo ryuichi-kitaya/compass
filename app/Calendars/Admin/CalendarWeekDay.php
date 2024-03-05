@@ -31,13 +31,13 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="{{ route('calendar.admin.detail', ['date' => 'setting_reserve'], ['part' => 'setting_part'->'1']) }}">1部</a><span>'. $one_part->users()->count() .'</span></p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $one_part->setting_reserve .'/'. $one_part->setting_part .'">1部</a><span>'. $one_part->users()->count() .'</span></p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/{date}/{part}">2部</a><span>'. $two_part->users()->count() .'</span></p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $two_part->setting_reserve .'/'. $two_part->setting_part .'">2部</a><span>'. $two_part->users()->count() .'</span></p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/{date}/{part}">3部</a><span>'.$three_part->users()->count() .'</span></p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'. $three_part->setting_reserve .'/'. $three_part->setting_part .'">3部</a><span>'.$three_part->users()->count() .'</span></p>';
     }
     $html[] = '</div>';
 
