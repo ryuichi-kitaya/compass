@@ -11,6 +11,7 @@ use App\Models\Calendars\Calendar;
 use App\Models\USers\User;
 use Auth;
 use DB;
+use Carbon\Carbon;
 
 class CalendarsController extends Controller
 {
@@ -21,9 +22,11 @@ class CalendarsController extends Controller
     }
 
     public function reserveDetail($date, $part){
-        $reservePersons = ReserveSettings::with('users')->where('setting_reserve', $date)->where('setting_part', $part)->get();
+        $reservePersons = ReserveSettings::with('users','user')->where('setting_reserve', $date)->where('setting_part', $part)->get();
         //dd($reservePersons);
-        return view('authenticated.calendar.admin.reserve_detail', compact('reservePersons', 'date', 'part'));
+        $datetime = carbon::parse("$date")->isoFormat('YYYY年M月D日');
+        //dd($date);
+        return view('authenticated.calendar.admin.reserve_detail', compact('reservePersons', 'date', 'part', 'datetime'));
     }
     //スクール枠登録
     public function reserveSettings(){
