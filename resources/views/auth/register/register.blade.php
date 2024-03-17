@@ -15,7 +15,7 @@
 <body>
   <form action="{{ route('registerPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="w-25 vh-75 border p-3">
+      <div class="vh-75 border p-3">
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
@@ -23,19 +23,19 @@
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
               </div>
-            </div>
             @if($errors->first('over_name'))
               <span class="error_message">{{ $errors->first('over_name') }}</span>
             @endif
+            </div>
             <div class="" style="width:140px">
               <label class=" d-block m-0" style="font-size:13px">名</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
               </div>
-            </div>
             @if($errors->first('under_name'))
               <span class="error_message">{{ $errors->first('under_name') }}</span>
             @endif
+            </div>
           </div>
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
@@ -43,29 +43,29 @@
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
               </div>
-            </div>
             @if($errors->first('over_name_kana'))
               <span class="error_message">{{ $errors->first('over_name_kana') }}</span>
             @endif
+            </div>
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">メイ</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
               </div>
-            </div>
             @if($errors->first('under_name_kana'))
               <span class="error_message">{{ $errors->first('under_name_kana') }}</span>
             @endif
+            </div>
           </div>
           <div class="mt-3">
             <label class="m-0 d-block" style="font-size:13px">メールアドレス</label>
             <div class="border-bottom border-primary">
               <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
             </div>
-          </div>
           @if($errors->first('mail_address'))
             <span class="error_message">{{ $errors->first('mail_address') }}</span>
           @endif
+          </div>
         </div>
         <div class="mt-3">
           <input type="radio" name="sex" class="sex" value="1">
@@ -74,10 +74,10 @@
           <label style="font-size:13px">女性</label>
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
-        </div>
         @if($errors->first('sex'))
           <span class="error_message">{{ $errors->first('sex') }}</span>
         @endif
+        </div>
         <div class="mt-3">
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
           <select class="old_year" name="old_year">
@@ -161,9 +161,9 @@
             <option value="31">31</option>
           </select>
           <label style="font-size:13px">日</label>
-          @if($errors->first('date'))
-          <span class="error_message">{{ $errors->first('date') }}</span>
-          @endif
+        @if($errors->first('date'))
+        <span class="error_message">{{ $errors->first('date') }}</span>
+        @endif
         </div>
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">役職</label>
@@ -210,7 +210,7 @@
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
         </div>
         <div class="text-center">
-          <a href="{{ route('loginView') }}">ログイン</a>
+          <a href="{{ route('loginView') }}">ログインはこちら</a>
         </div>
       </div>
       {{ csrf_field() }}
