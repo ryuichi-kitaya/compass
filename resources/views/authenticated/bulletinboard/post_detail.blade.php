@@ -6,15 +6,17 @@
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
+          @foreach($post->sub_category as $sub_category)
+            <P class="category_icon">{{ $sub_category->sub_category }}</P>
+          @endforeach
           </div>
           @if(Auth::id() === $post->user->id)
-          <div>
+          <div class="post_detail_btn">
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }} " onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
+            <span class="delete-btn"><a href="{{ route('post.delete', ['id' => $post->id]) }} " onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></span>
           </div>
           @endif
         </div>
-
         <div class="contributor d-flex">
           <p>
             <span>{{ $post->user->over_name }}</span>
@@ -50,14 +52,14 @@
   </div>
   <div class="w-50 p-3">
     <div class="comment_container border m-5">
-      <div class="comment_area p-3">
+      <div class="comment_area p-3" style="height:380px;">
         <p class="m-0">コメントする</p>
         @if($errors->first('comment'))
         <span class="error_message">{{ $errors->first('comment') }}</span>
         @endif
-        <textarea class="w-100" name="comment" form="commentRequest"></textarea>
+        <textarea class="comment_area_text" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        <input type="submit" class="comment_create_btn" form="commentRequest" value="投稿">
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>
     </div>
