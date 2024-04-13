@@ -61,7 +61,7 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';//getPartを飛ばしている記述
           }else{//予約している未来日
-            $html[] = '<button type="submit" class="js-modal-open p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            $html[] = '<button type="submit" class="js-modal-open p-0 w-75" name="delete_date" style="font-size:12px; background-color: red; border-color: red; color: #fff;" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){//予約していない過去日

@@ -16,7 +16,6 @@ li{
 /* サイドバー */
 .sidebar{
   width:200px;
-  height:100vh;
   background-color:#03AAD2;
   font-weight:bold;
   padding-top: 10px;
@@ -42,7 +41,7 @@ li{
 
 /* スクール予約関連 */
 .day-blank{
-  background:gray;
+  background-color: #9E9E9E;
 }
 .day-sat{
   color:#0000FF;
@@ -55,6 +54,7 @@ li{
 }
 .calendar-td{
   min-width:100px;
+   border: 1px solid #dee2e6;
 }
 .day_part{
   color:#494949;
@@ -441,7 +441,7 @@ li{
   height: 8px;
   position: absolute;
   right: 65px;
-  top:240px;
+  top:200px;
   transform: rotate(135deg);
   transition: transform .3s ease-in-out, top .3s ease-in-out;
   width: 8px;
@@ -453,7 +453,7 @@ li{
 }
 
 .search_conditions.open::after{
-  top: 245px;
+  top: 200px;
   transform: rotate(-45deg);
 }
 
@@ -522,8 +522,8 @@ li{
   display: block;
   height: 8px;
   position: absolute;
-  left: 420px;
-  top:276px;
+  left: 115px;
+  top: 252px;
   transform: rotate(135deg);
   transition: transform .3s ease-in-out, top .3s ease-in-out;
   width: 8px;
@@ -531,7 +531,7 @@ li{
 }
 
 .subject_edit_btn.open::after{
-  top: 276px;
+  top: 252px;
   transform: rotate(-45deg);
 }
 
@@ -578,6 +578,16 @@ li{
   color:#FFF;
 }
 
+.top_area{
+  position: relative;
+}
+
+.profile-name{
+  position: absolute;
+  top: 10px;
+  left: -130px;
+}
+
 /* ログイン画面 */
 
 .login_icon{
@@ -591,10 +601,84 @@ li{
 }
 
 .text-center{
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .sex{
   padding-left: 15px;
   padding-right: 15px;
+}
+
+/* 新規登録 */
+
+.register_con{
+  width: 100%;
+  background-color: #ECF1F6;
+}
+
+.register_area{
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  width: 340px;
+  padding: 15px;
+  box-shadow: 5px 5px 5px -5px;
+}
+
+/* カレンダー */
+
+.calendar-box{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.calender-day{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.reserve_title{
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  background-color: #03AAD2;
+  border-color: #03AAD2;
+  color: #fff;
+  font-weight: bold;
+}
+
+.reserve_parson{
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  background-color: ;
+}
+
+.reserve_parson:nth-child(2n){
+  background-color: #ddfaff;
+}
+
+.reserve_parson:nth-child(2n+1){
+  background-color: #fff;
+}
+
+.reserve_detail{
+  border: none;
+  background-color: #fff;
+}
+
+.day_part{
+  display: flex;
+  justify-content: space-around;
+}
+
+.wakutoroku-btn{
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  position: absolute;
+  top: 729px;
+  right: 250px;
 }
