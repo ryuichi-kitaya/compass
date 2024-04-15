@@ -640,7 +640,8 @@ li{
 .reserve_title{
   display: flex;
   margin: 0 auto;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0px 4em;
   background-color: #03AAD2;
   border-color: #03AAD2;
   color: #fff;
@@ -650,8 +651,8 @@ li{
 .reserve_parson{
   display: flex;
   margin: 0 auto;
-  justify-content: space-around;
-  background-color: ;
+  padding: 0px 4em;
+  justify-content: space-between;
 }
 
 .reserve_parson:nth-child(2n){
