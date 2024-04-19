@@ -74,7 +74,8 @@ class RegisterRequest extends FormRequest
             'date.after_or_equal' =>'2000年1月1日以降で登録してください。',
             'date.after_or_before' =>'未来日の登録はできません。',
             'role.required' =>'役職は入力必須です。',
-            'password' =>'パスワードは入力必須です。',
+            'password.required' =>'パスワードは入力必須です。',
+            'password.confirmed' =>'入力と確認用が相違しています。',
             'password.min' =>'8文字以上で登録してください。',
             'password.max' =>'30文字以内で登録してください。',
         ];

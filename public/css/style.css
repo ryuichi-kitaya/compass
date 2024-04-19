@@ -590,16 +590,6 @@ li{
 
 /* ログイン画面 */
 
-.login_icon{
-  position: relative;
-}
-
-.login_icon img{
-  position: absolute;
-  right:580px;
-  top:100px;
-}
-
 .text-center{
   padding-bottom: 15px;
 }
@@ -607,6 +597,9 @@ li{
 .sex{
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.login-container{
 }
 
 /* 新規登録 */
