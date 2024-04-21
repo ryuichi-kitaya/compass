@@ -204,10 +204,13 @@ li{
 }
 
 .sub_category_btn{
-  display: none;
   border: none;
   border-bottom: 1px solid lightgrey;
   background-color: #ECF1F6;
+}
+
+.sub_category_views{
+  display: none;
 }
 
 .subject_check{
