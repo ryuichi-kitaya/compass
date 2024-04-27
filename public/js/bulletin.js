@@ -1,8 +1,8 @@
 $(function () {
   $('.main_categories').click(function () {
-    var category_id = $(this).attr('category_id');
-    $('.category_num' + category_id).slideToggle();
-    $(this).next().slideToggle();
+    var category_id = $(this).attr('category_id');//main_categoriesのcategory_idを受け取ってる。
+    $('.category_num' + category_id).slideToggle();//アコーディオンを実装する上で不要な記述
+    $(this).nextAll().slideToggle();
     $(this).toggleClass("open");
   });
 

@@ -379,6 +379,10 @@ li{
   color: #03AAD2;
 }
 
+.sub_category_views{
+  display: none;
+}
+
 .reserve_users_area{
   display:flex;
   flex-wrap:wrap;
