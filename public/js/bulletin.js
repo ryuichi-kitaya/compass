@@ -2,6 +2,8 @@ $(function () {
   $('.main_categories').click(function () {
     var category_id = $(this).attr('category_id');
     $('.category_num' + category_id).slideToggle();
+    $(this).next().slideToggle();
+    $(this).toggleClass("open");
   });
 
   $(document).on('click', '.like_btn', function (e) {
@@ -61,11 +63,6 @@ $(function () {
   $('.js-modal-close').on('click', function () {
     $('.js-modal').fadeOut();
     return false;
-  });
-
-  $('.main_categories').click(function () {
-    $(this).next().slideToggle();
-    $(this).toggleClass("open");
   });
 
 });

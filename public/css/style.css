@@ -209,10 +209,6 @@ li{
   background-color: #ECF1F6;
 }
 
-.sub_category_views{
-  display: none;
-}
-
 .subject_check{
   display: flex;
   align-items: center;
